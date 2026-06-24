@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,31 +20,31 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 40px 24px 80px;
 }
 
 h1 {
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.35em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 video {
     width: 100%;
     display: block;
-    margin-bottom: 40px;
-    background: #111;
+    cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .about {
-    max-width: 650px;
+    max-width: 600px;
     color: #bdbdbd;
     font-size: 1rem;
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .contact a {
@@ -57,7 +58,7 @@ video {
 
 @media (max-width: 700px) {
     .container {
-        padding: 30px 20px 60px;
+        padding: 24px 16px 60px;
     }
 
     h1 {
@@ -70,6 +71,7 @@ video {
     }
 }
 </style>
+
 </head>
 
 <body>
@@ -78,14 +80,12 @@ video {
 
 <h1>JOEL STOCKMAN</h1>
 
-<video controls preload="metadata">
+<video id="showreel" autoplay muted loop playsinline>
     <source src="showreel.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
 </video>
 
 <div class="about">
-    Joel Stockman is a filmmaker and videographer based in Sweden.
-    Creating documentaries, commercial films and branded content with a focus on authentic storytelling.
+    Filmmaker and videographer based in Sweden.
 </div>
 
 <div class="contact">
@@ -95,6 +95,18 @@ video {
 </div>
 
 </div>
+
+<script>
+const video = document.getElementById("showreel");
+
+video.addEventListener("click", () => {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+});
+</script>
 
 </body>
 </html>
